@@ -81,14 +81,25 @@ def changeBack(cost, given):
             dif -= 0.01
     return change
 
-
-
-
-
-
-
-
 #Binary to Decimal and Back Converter - Develop a converter to convert a decimal number to binary or a binary number to its decimal equivalent.
+def binConverter(key, num):
+    num = int(num)
+    if num == 0:
+        return 0
+    if key == "dec":
+        bin = ""
+        while num > 0:
+            bin += str(num%2)
+            num = int(num/2)
+        return bin[::-1]
+    elif key == "bin":
+        bin = str(num)
+        bin = bin[::-1]
+        dec = 0
+        for i in range(0, len(bin)):
+            dec += int(bin[i])* (2**i)
+        return dec
+
 #Calculator - A simple calculator to do basic operators. Make it a scientific calculator for added complexity.
 #Unit Converter (temp, currency, volume, mass and more) - Converts various units between one another. The user enters the type of unit being entered, the type of unit they want to convert to and then the value. The program will then make the conversion.
 #Alarm Clock - A simple clock where it plays a sound after X number of minutes/seconds or at a particular time.
