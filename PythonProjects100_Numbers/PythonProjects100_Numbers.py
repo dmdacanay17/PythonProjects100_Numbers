@@ -49,17 +49,45 @@ def isPrime(n):
             return False
     return True
 
-
 #Find Cost of Tile to Cover W x H Floor - Calculate the total cost of tile it would take to cover a floor plan of width and height, using a cost entered by the user.
-
-
-
-
-
-
+def tileCost(w,h,cost):
+    return w*h*cost
 
 #Mortgage Calculator - Calculate the monthly payments of a fixed term mortgage over given Nth terms at a given interest rate. Also figure out how long it will take the user to pay back the loan. For added complexity, add an option for users to select the compounding interval (Monthly, Weekly, Daily, Continually).
+def mortgageCalc(mortgage, terms, interest, interval):
+    return False
+
 #Change Return Program - The user enters a cost and then the amount of money given. The program will figure out the change and the number of quarters, dimes, nickels, pennies needed for the change.
+def changeBack(cost, given):
+    change ={
+        "quarters":0,
+        "dimes":0,
+        "nickles":0,
+        "pennies":0
+        }
+    dif = given - cost
+    while dif > 0.0:
+        if dif >= 0.25:
+            change["quarters"]+=1
+            dif -= 0.25
+        elif dif >= 0.10:
+            change["dimes"]+=1
+            dif -= 0.10
+        elif dif >= 0.05:
+            change["nickles"]+=1
+            dif -= 0.05
+        else:
+            change["pennies"]+= 1
+            dif -= 0.01
+    return change
+
+
+
+
+
+
+
+
 #Binary to Decimal and Back Converter - Develop a converter to convert a decimal number to binary or a binary number to its decimal equivalent.
 #Calculator - A simple calculator to do basic operators. Make it a scientific calculator for added complexity.
 #Unit Converter (temp, currency, volume, mass and more) - Converts various units between one another. The user enters the type of unit being entered, the type of unit they want to convert to and then the value. The program will then make the conversion.
